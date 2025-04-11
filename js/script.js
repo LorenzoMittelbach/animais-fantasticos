@@ -22,7 +22,6 @@ const tabnav = new TabNav(
 );
 tabnav.init();
 
-initTabNav();
 initModal();
 initTooltip();
 initDropdownMenu();
