@@ -21,7 +21,7 @@ export default class ScrollSuave {
     });
   }
   init() {
-    if (this.linksInternos.length) {
+    if (this.linksInternos) {
       this.addLinkEvent();
     }
     return this;
