@@ -1,8 +1,8 @@
 import outsideClick from "./outside-click.js";
 
 export default class DropdownMenu {
-  constructor(dropDownMenus, events) {
-    this.dropDownMenus = document.querySelectorAll(dropDownMenus);
+  constructor(dropdownMenus, events) {
+    this.dropdownMenus = document.querySelectorAll(dropdownMenus);
 
     // define touchstart e click como argumento padrao
     // de events caso o usuario nao defina
@@ -27,7 +27,7 @@ export default class DropdownMenu {
 
   // adiciona os eventos ao dropdownmenu
   addDropdownMenusEvent() {
-    this.dropDownMenus.forEach((menu) => {
+    this.dropdownMenus.forEach((menu) => {
       this.events.forEach((userEvent) => {
         menu.addEventListener(userEvent, this.activeDropdownMenu);
       });
@@ -35,7 +35,7 @@ export default class DropdownMenu {
   }
 
   init() {
-    if (this.dropDownMenus.lenght) {
+    if (this.dropdownMenus.lenght) {
       this.addDropdownMenusEvent();
     }
     return this;
