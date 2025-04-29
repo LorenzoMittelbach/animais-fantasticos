@@ -4,12 +4,11 @@ export default class DropdownMenu {
   constructor(dropdownMenus, events) {
     this.dropdownMenus = document.querySelectorAll(dropdownMenus);
 
-    // define touchstart e click como argumento padrao
-    // de events caso o usuario nao defina
+    // define touchstart e click como argumento padrão
+    // de events caso o usuário não define
     if (events === undefined) this.events = ["touchstart", "click"];
-    else {
-      this.events = events;
-    }
+    else this.events = events;
+
     this.activeClass = "active";
     this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
   }
@@ -21,7 +20,7 @@ export default class DropdownMenu {
     const element = event.currentTarget;
     element.classList.add(this.activeClass);
     outsideClick(element, this.events, () => {
-      element.classList.remove(this.activeClass);
+      element.classList.remove("active");
     });
   }
 
@@ -35,7 +34,7 @@ export default class DropdownMenu {
   }
 
   init() {
-    if (this.dropdownMenus.lenght) {
+    if (this.dropdownMenus.length) {
       this.addDropdownMenusEvent();
     }
     return this;
